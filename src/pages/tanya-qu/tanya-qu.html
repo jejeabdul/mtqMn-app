@@ -1,0 +1,55 @@
+<!--
+  Generated template for the TanyaQuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>TanyaQu</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <!-- <ion-list> -->
+
+  <ion-item>
+    <ion-label>
+      <ion-icon style="color:grey;" name="search"></ion-icon>
+    </ion-label>
+    <ion-input clearInput type="text" placeholder="TanyaQu" [(ngModel)]="txtSearch"></ion-input>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button color="secondary" (click)="loadSerachAlQuran()">AL QURAN</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="secondary" (click)="loadSearchHadits()">HADITS</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- </ion-list> -->
+  <ion-list [hidden]="ishidden1">
+    <ion-item-divider color="light"> Daftar Surat</ion-item-divider>
+    <ion-item *ngFor="let item of items" (click)="loadEditSurat(item.id)">
+      <h2>{{item.suratname}}</h2>
+      <p>Jumlah Ayat : {{item.suratjumlah}} ayat</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list [hidden]="ishidden2">
+    <ion-item-divider color="light"> Daftar Hadits</ion-item-divider>
+    <ion-item *ngFor="let item of items" (click)="loadEditHadits(item.id)">
+      <h2>{{item.haditsname}}</h2>
+      <p>Riwayat : {{item.haditsriwayat}}</p>
+      <p>Kategori : {{item.haditskategori}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

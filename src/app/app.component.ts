@@ -1,10 +1,12 @@
+import { TanyaQuPage } from './../pages/tanya-qu/tanya-qu';
+import { DaftarHaditsPage } from './../pages/daftar-hadits/daftar-hadits';
+import { DaftarSuratPage } from './../pages/daftar-surat/daftar-surat';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +24,9 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Daftar Surat', component: DaftarSuratPage },
+      { title: 'Daftar Hadits', component: DaftarHaditsPage },
+      { title: 'TanyaQu', component: TanyaQuPage }
     ];
 
   }
